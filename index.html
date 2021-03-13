@@ -8,8 +8,46 @@
     <title>Canvas</title>
 </head>
 <body>
+    <nav class="nav-bar">
+        <h1>Canvas drawing</h1>
+        <ul class="tools">
+            <li class="tool">Size and Style</li>
+            <li class="tool">Predefined shapes</li>
+            <li class="tool">Special effects</li>
+            <li class="tool"></li>
+        </ul>
+
+    </nav>
+    <main class="container">
+        <div class="canvas-container">
+            <canvas id="draw" width="600" height="600">Fallback content goes here if browser can't render canvas</canvas>
+        </div>
     
-    <canvas id="draw" width="600" height="600">Fallback content goes here if browser can't render canvas</canvas>
+        <div class="tools-container">
+            <div class="canvas-size">
+                Enter the size of canvas: X: <input type="text" class="size" id="canvas-width"> Y: <input type="text" class="size" id="canvas-height"> <button id="confirm-canvas">Confirm</button>
+            </div>
+           <div class="line-size">
+            Line size : <button id="thin">thin</button> <button id="medium">medium</button> <button id="thick">thick</button> Custom <input class="size" id="line-weight" type="text">
+           </div>
+           <div class="line-color">
+               Choose the color of line <input class="size" id="line-color" type="color">
+           </div>
+           <div class="fill-color">
+               Choose the fill color <input class="size" id="fill-color" type="color">
+           </div>
+           <div class="line-join">
+               Choose the way of line join: <input type="radio" id="butt">Butt<input type="radio" id="round">Round<input type="radio" id="square">Square
+           </div>
+           <div class="line-cap">
+            Choose the line cap: <input type="radio" id="bevel">Bevel<input type="radio" id="round">Round<input type="radio" id="miter">Miter
+           </div>
+            
+    
+        </div>
+    </main>
+    
+    
 
     <script src="scrypt.js"></script>
 </body>
