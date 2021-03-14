@@ -11,44 +11,92 @@
     <nav class="nav-bar">
         <h1>Canvas drawing</h1>
         <ul class="tools">
-            <li class="tool">Size and Style</li>
-            <li class="tool">Predefined shapes</li>
-            <li class="tool">Special effects</li>
+            <li class="tool"><button type="button" id="sizeAndStyle">Size and Style</button> </li>
+            <li class="tool"><button type="button" id="predefinedShapes">Predefined shapes</button></li>
+            <li class="tool"><button type="button" id="specialEffects">Special effects</button></li>
             <li class="tool"></li>
         </ul>
 
     </nav>
+    <button id="reload">Reload</button>
     <main class="container">
         <div class="canvas-container">
             <canvas id="draw" width="600" height="600">Fallback content goes here if browser can't render canvas</canvas>
         </div>
     
         <div class="tools-container">
-            <div class="canvas-size">
-                Enter the size of canvas: X: <input type="text" class="size" id="canvas-width"> Y: <input type="text" class="size" id="canvas-height"> <button id="confirm-canvas">Confirm</button>
+            <div class="sizeAndStyle">
+                <div class="canvas-size">
+                    <form action="" name="canvas-size">
+                        <label for="size"> Enter the size of canvas: </label>
+                        X: <input type="text" class="size" name="size" id="canvas-width" placeholder = "">px 
+                        Y: <input type="text" class="size" name="size" id="canvas-height" placeholder = "">px 
+                        <button type="button" id="confirm-size">Confirm</button>
+                    </form>               
+                </div>
+               <div class="line-size">
+                Line size : 
+                <button id="thin">thin</button> 
+                <button id="medium">medium</button> 
+                <button id="thick">thick</button> 
+                Custom <input class="size" id="line-weight" type="text">px
+               </div>
+               <div class="line-color">
+                   Choose the color of line 
+                   <input class="size" id="line-color" type="color">
+               </div>
+               <div class="fill-color">
+                   Choose the fill color <input class="size" id="fill-color" type="color">
+               </div>
+               <div class="line-join">               
+                    Choose the way of line join: 
+                    <input type="radio" name="line-cap" id="bevel" value="bevel">Bevel
+                    <input type="radio" name="line-cap" id="round-join" value="round" checked>Round
+                    <input type="radio" name="line-cap" id="miter" value="miter">Miter  
+               </div>
+               <div class="line-cap">
+                Choose the line cap: 
+                    <input type="radio" name="lineJoin" id="butt" value="butt">Butt
+                    <input type="radio" name="lineJoin" id="round-cap" value="round" checked>Round
+                    <input type="radio" name="lineJoin" id="square" value="square">Square
+               </div>
             </div>
-           <div class="line-size">
-            Line size : <button id="thin">thin</button> <button id="medium">medium</button> <button id="thick">thick</button> Custom <input class="size" id="line-weight" type="text">
-           </div>
-           <div class="line-color">
-               Choose the color of line <input class="size" id="line-color" type="color">
-           </div>
-           <div class="fill-color">
-               Choose the fill color <input class="size" id="fill-color" type="color">
-           </div>
-           <div class="line-join">
-               Choose the way of line join: <input type="radio" id="butt">Butt<input type="radio" id="round">Round<input type="radio" id="square">Square
-           </div>
-           <div class="line-cap">
-            Choose the line cap: <input type="radio" id="bevel">Bevel<input type="radio" id="round">Round<input type="radio" id="miter">Miter
-           </div>
-            
+            <div class="predefinedShapes">
+                <div class="square">
+                    <h3>Square</h3>
+                    <label for="squareWidth">Enter the square width</label>
+                    <input type="text" name="squareWidth" id="square-width" class="size" ><br>
+                    <label for="squareHeight">Enter the square height</label>
+                    <input type="text" name="squareHeight" id="square-height" class="size" ><br>
+                </div>
+                <div class="circle">
+                    <h3>Circle</h3>
+                    <label for="circleRadius">Enter the circle radius</label>
+                    <input type="text" name="circleRadius" id="circle-radius" class="size" >
+                </div>
+                <div class="halfCircle">
+                    <h3>Half-circle</h3>
+                    <label for="halfCircle">Enter the half-circle radius</label>
+                    <input type="text" name="halfCircleRadius" id="half-circle-radius" class="size" >
+                    <button type="button" id="up-down">Up/Down</button>
+                    
+                   
+                </div>
+                
+            </div>
+            <div class="specialEffects">
+
+            </div>
     
         </div>
     </main>
     
+    <form action="">
+        <input type="text" name="input-test" id="input-test" value = 'testiranje'>
+        <button type="button" name="test" id="test">Test</button>
+    </form>
     
-
     <script src="scrypt.js"></script>
+   
 </body>
 </html>

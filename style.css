@@ -30,6 +30,10 @@ canvas {
 
 }
 
+
 .size {
-    width: 30px;
+    width: 50px;
+}
+.sizeAndStyle, .predefinedShapes, .specialEffects {
+    display: none;
 }
