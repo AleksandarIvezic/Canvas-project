@@ -2,10 +2,11 @@ const canvas = document.getElementById("draw");
 const ctx = canvas.getContext("2d");
 // canvas.width = window.innerWidth;
 // canvas.height = window.innerHeight;
-// ctx.strokeStyle = "#BADA55";
+ctx.strokeStyle = "#000";
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
 ctx.lineWidth= 2;
+// ctx.fillStyle= null;
 // ctx.globalCompositeOperation = "exclusion";
 
 // let increment = true;
@@ -81,31 +82,39 @@ const custom = document.getElementById("line-weight");
 thin.addEventListener("click", lineSizeThin);
 medium.addEventListener("click", lineSizeMedium);
 thick.addEventListener("click", lineSizeThick);
-custom.addEventListener("change", customLineWeight)
+custom.addEventListener("change", customLineWeight);
 
-function lineSizeThin () {
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+function sizeButonDefault (e) {
+     //prvo vracam dugmice na prethodno
+     for (let i=3; i<8; i+=2){        
+        e.target.parentElement.childNodes[i].style.color="var(--navColor)";
+        e.target.parentElement.childNodes[i].style.backgroundColor="var(--btnColor)";
+    }
+}
+
+function clickedSizeButton (e) {
+    sizeButonDefault(e);
+    //a onda menjam stil na kliknutom    
+    e.target.style.color = "var(--primaryColor)";
+    e.target.style.backgroundColor = "var(--lightColor)";
+}
+
+
+function lineSizeThin (e) {   
     ctx.lineWidth = 2; 
-    // changeFillColor (); 
-    // ctx.stroke();  
+    clickedSizeButton(e);
 }
-function lineSizeMedium () {
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+function lineSizeMedium (e) {   
     ctx.lineWidth = 5;
-    // changeFillColor ();
-    // ctx.stroke();  
+    clickedSizeButton(e);
 }
-function lineSizeThick () {
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+function lineSizeThick (e) {
     ctx.lineWidth = 10;
-    // changeFillColor ();
-    // ctx.stroke();  
+    clickedSizeButton(e);
 }
-function customLineWeight (e) {
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+function customLineWeight (e) {   
     ctx.lineWidth = e.target.value;
-    // changeFillColor ();
-    // ctx.stroke();  
+   sizeButonDefault(e);
 }
 
 
@@ -151,7 +160,6 @@ const roundCap = document.getElementById("round-cap");
 const square = document.getElementById("square");
 
 function changeCap (e) {
-    console.log(e.target.value);
     ctx.lineCap = e.target.value;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fill();
@@ -172,7 +180,7 @@ const squareReady = document.getElementById("square-ready");
 function drawSquare () {
     if (!isDrawing) return;
     ctx.rect(lastX, lastY, squareWidth.value, squareHeight.value); 
-       
+    ctx.fill();   
     ctx.stroke();    
 } 
 
@@ -181,11 +189,9 @@ const circleRadius = document.getElementById("circle-radius");
 
 function drawCircle () {
     if(!isDrawing) return;
-    ctx.beginPath();
-    // ctx.moveTo(lastX, lastY);
-    // ctx.lineTo(lastX, lastY);
+    ctx.beginPath();    
     ctx.arc(lastX, lastY, circleRadius.value, 0, Math.PI *2);
-    //  ctx.fill();
+     ctx.fill();
     ctx.stroke();
 }
 
@@ -195,12 +201,10 @@ const upDown = document.getElementById("up-down");
 let flip = false;
 function drawHalfCircle () {
     if(!isDrawing) return;
-    ctx.beginPath();
-    // ctx.moveTo(lastX, lastY);
-    // ctx.lineTo(lastX, lastY);
+    ctx.beginPath();    
     ctx.arc(lastX, lastY, halfCircleRadius.value, 0, Math.PI ,flip );
     ctx.closePath();
-     
+    ctx.fill(); 
     ctx.stroke();
 }
 function flipHalfCircle () {
@@ -216,20 +220,63 @@ const specialEffectsBtn = document.getElementById("specialEffects");
 const sizeAndStyleClass = document.querySelector(".sizeAndStyle");
 const predefinedShapesClass = document.querySelector(".predefinedShapes");
 const specialEffectsClass = document.querySelector(".specialEffects");
-sizeAndStyleBtn.addEventListener("click", ()=> sizeAndStyleClass.style.display ==="" ? sizeAndStyleClass.style.display ="block" : sizeAndStyleClass.style.display = "");
-predefinedShapesBtn.addEventListener("click", ()=> predefinedShapesClass.style.display ==="" ? predefinedShapesClass.style.display ="block" : predefinedShapesClass.style.display = "");
-specialEffectsBtn.addEventListener("click", ()=> specialEffectsClass.style.display ==="" ? specialEffectsClass.style.display ="block" : specialEffectsClass.style.display = "");
+function clickedToolButton (e) {
+    //prvo vracam dugmice na prethodno
+    for (let i=1; i<6; i+=2){        
+        e.target.parentElement.parentElement.childNodes[i].firstChild.style.color="var(--navColor)";
+        e.target.parentElement.parentElement.childNodes[i].firstChild.style.backgroundColor="var(--btnColor)";
+    }
+    //a onda menjam stil na kliknutom    
+    
+    e.target.style.backgroundColor = " var(--primaryColor)";
+}
+function handleStyle (e) {
+    predefinedShapesClass.style.display = "";
+    specialEffectsClass.style.display = "";
+    sizeAndStyleClass.style.display ==="" ? sizeAndStyleClass.style.display ="block" : sizeAndStyleClass.style.display = "";
+    clickedToolButton(e);
+}
+function handleShapes (e) {
+    sizeAndStyleClass.style.display="";
+    specialEffectsClass.style.display="";
+    predefinedShapesClass.style.display ==="" ? predefinedShapesClass.style.display ="block" : predefinedShapesClass.style.display = "";
+    clickedToolButton(e);
+}
+function handleEffects (e) {
+    sizeAndStyleClass.style.display="";
+    predefinedShapesClass.style.display = "";
+    specialEffectsClass.style.display ==="" ? specialEffectsClass.style.display ="block" : specialEffectsClass.style.display = "";
+    clickedToolButton(e);
+}
+sizeAndStyleBtn.addEventListener("click", handleStyle);
+predefinedShapesBtn.addEventListener("click", handleShapes);
+specialEffectsBtn.addEventListener("click", handleEffects);
 
 //effects
 
 const effects = document.getElementsByClassName("effect");
 function addEffect (e) {
     ctx.globalCompositeOperation=e.target.innerHTML.toLowerCase();
-    console.log(ctx.globalCompositeOperation)
 }
 for (let i =0; i<effects.length; i++) {
     effects[i].addEventListener("click", addEffect);
 }
+
+//handle effect buttons
+const effectBtns = document.getElementsByClassName("effect");
+function clickedEffectButton (e) {
+    //prvo vracam dugmice na prethodno
+    for (let i=1; i<52; i+=2){       
+        e.target.parentElement.childNodes[i].style.color="var(--navColor)";
+        e.target.parentElement.childNodes[i].style.backgroundColor="var(--btnColor)";
+    }
+    //a onda menjam stil na kliknutom    
+    e.target.style.color = "var(--primaryColor)";
+    e.target.style.backgroundColor = "var(--lightColor)";
+}
+effectArr = Array.from(effectBtns);
+effectArr.forEach(efect => efect.addEventListener("click", clickedEffectButton));
+
 
 // for (let effect in effects) {
 //     console.log(effects[effect]);

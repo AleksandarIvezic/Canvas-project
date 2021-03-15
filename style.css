@@ -1,17 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Indie+Flower&family=Syne+Mono&display=swap');
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
-/* body {
-    
-    text-align: center;
-} */
+:root {
+    --primaryColor: #323232;
+    --navColor: #c8c8c8;
+    --btnColor: #58627c;
+    --redColor: #cc0000;
+    --whiteColor: #fff;
+    --lightColor: #c19a38;
+}
+body{
+    background-color: var(--primaryColor);
+}
+h1 {
+    color: var(--primaryColor);
+}
+button {
+    font-family: 'Syne Mono', monospace;
+}
+.btn-nav {
+    background-color: var(--btnColor);
+    color: var(--navColor);
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+.btn-nav:hover {
+    background-color: var(--primaryColor);
+    transition: 1.1s ease;
+}
 
 .nav-bar{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Akaya Telivigala', cursive;
+    background-color: var(--navColor);
+    padding: 10px;
 }
 .tools {
     display: flex;
@@ -19,21 +48,49 @@
     
 }
 .tool {
+    
     padding: 5px;
 }
 .container {
+    width: 90%;
+    margin: 10px auto;
     display: flex;
 }
 canvas {
-    border: 1px red solid;
-    margin: 20px 
-
+    border: 2px var(--redColor) solid;
+    margin: 20px ;
+    background-color: var(--whiteColor);
 }
-
-
 .size {
     width: 50px;
 }
 .sizeAndStyle, .predefinedShapes, .specialEffects {
     display: none;
+}
+.tools-container {
+    color:var(--navColor);
+    font-family: 'Indie Flower', cursive;
+}
+
+.tool-btn {
+    color: var(--navColor);
+    background-color: var(--btnColor);
+    border:none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    
+}
+.tool-btn:hover {
+    background-color: var(--lightColor);
+    color:var(--primaryColor);
+}
+
+#line-color, #fill-color{
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    border: none;
+}
+h3 {
+    color:var(--lightColor);
 }

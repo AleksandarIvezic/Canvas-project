@@ -11,9 +11,9 @@
     <nav class="nav-bar">
         <h1>Canvas drawing</h1>
         <ul class="tools">
-            <li class="tool"><button type="button" id="sizeAndStyle">Size and Style</button> </li>
-            <li class="tool"><button type="button" id="predefinedShapes">Predefined shapes</button></li>
-            <li class="tool"><button type="button" id="specialEffects">Special effects</button></li>
+            <li class="tool"><button class="btn-nav" type="button" id="sizeAndStyle">Size and Style</button> </li>
+            <li class="tool"><button class="btn-nav" type="button" id="predefinedShapes">Predefined shapes</button></li>
+            <li class="tool"><button class="btn-nav" type="button" id="specialEffects">Special effects</button></li>
             <li class="tool"></li>
         </ul>
 
@@ -21,96 +21,96 @@
     <button id="reload">Reload</button>
     <main class="container">
         <div class="canvas-container">
-            <canvas id="draw" width="600" height="600">Fallback content goes here if browser can't render canvas</canvas>
+            <canvas id="draw" width="200" height="200">Fallback content goes here if browser can't render canvas</canvas>
         </div>
     
         <div class="tools-container">
             <div class="sizeAndStyle">
                 <div class="canvas-size">
                     <form action="" name="canvas-size">
-                        <label for="size"> Enter the size of canvas: </label>
-                        X: <input type="text" class="size" name="size" id="canvas-width" placeholder = "">px 
-                        Y: <input type="text" class="size" name="size" id="canvas-height" placeholder = "">px 
-                        <button type="button" id="confirm-size">Confirm</button>
+                        <span>Canvas: </span> 
+                        <label for="canvas-width">X:</label>  <input type="text" class="size" name="x" id="canvas-width" placeholder = ""><span>px</span> 
+                        <label for="canvas-height">Y:</label> <input type="text" class="size" name="y" id="canvas-height" placeholder = ""><span>px</span> 
+                        <button class="tool-btn" type="button" id="confirm-size">Confirm</button>
                     </form>               
                 </div>
                <div class="line-size">
-                Line size : 
-                <button id="thin">thin</button> 
-                <button id="medium">medium</button> 
-                <button id="thick">thick</button> 
-                Custom <input class="size" id="line-weight" type="text">px
+                <span>Line:</span>
+               <button class="tool-btn"  id="thin">Thin</button>
+                <button class="tool-btn"  id="medium">Medium</button> 
+                <button class="tool-btn"  id="thick">Thick</button> 
+                <label for="line-weight">Custom:</label>  <input name="custom" class="size" id="line-weight" type="text"><span>px</span> 
                </div>
-               <div class="line-color">
-                   Choose the color of line 
-                   <input class="size" id="line-color" type="color">
+               <div class="line-color"> 
+                   <label for="line-color">Line color:</label> 
+                   <input class="size" id="line-color" type="color" name="line-color">
                </div>
                <div class="fill-color">
-                   Choose the fill color <input class="size" id="fill-color" type="color">
+                  <label for="fill-color">Fill color:</label>  <input name="fill" class="size" id="fill-color" type="color">
                </div>
                <div class="line-join">               
-                    Choose the way of line join: 
-                    <input type="radio" name="line-cap" id="bevel" value="bevel">Bevel
-                    <input type="radio" name="line-cap" id="round-join" value="round" checked>Round
-                    <input type="radio" name="line-cap" id="miter" value="miter">Miter  
+                    <span>Line join:</span> 
+                    <input type="radio" name="line-cap" id="bevel" value="bevel"><label for="bevel">Bevel</label> 
+                    <input type="radio" name="line-cap" id="round-join" value="round" checked><label for="round-join">Round</label>
+                    <input type="radio" name="line-cap" id="miter" value="miter"><label for="miter">Miter</label>  
                </div>
                <div class="line-cap">
-                Choose the line cap: 
-                    <input type="radio" name="lineJoin" id="butt" value="butt">Butt
-                    <input type="radio" name="lineJoin" id="round-cap" value="round" checked>Round
-                    <input type="radio" name="lineJoin" id="square" value="square">Square
+                    <span>Line cap:</span>  
+                    <input type="radio" name="lineJoin" id="butt" value="butt"><label for="butt">Butt</label> 
+                    <input type="radio" name="lineJoin" id="round-cap" value="round" checked><label for="round-cap">Round</label> 
+                    <input type="radio" name="lineJoin" id="square" value="square"><label for="square">Square</label> 
                </div>
             </div>
             <div class="predefinedShapes">
                 <div class="square">
                     <h3>Square</h3>
-                    <label for="squareWidth">Enter the square width</label>
+                    <label for="square-width">Width</label>
                     <input type="text" name="squareWidth" id="square-width" class="size" ><br>
-                    <label for="squareHeight">Enter the square height</label>
+                    <label for="square-height">Height</label>
                     <input type="text" name="squareHeight" id="square-height" class="size" ><br>
                 </div>
                 <div class="circle">
                     <h3>Circle</h3>
-                    <label for="circleRadius">Enter the circle radius</label>
+                    <label for="circle-radius">Radius</label>
                     <input type="text" name="circleRadius" id="circle-radius" class="size" >
                 </div>
                 <div class="halfCircle">
                     <h3>Half-circle</h3>
-                    <label for="halfCircle">Enter the half-circle radius</label>
+                    <label for="half-circle-radius">Radius</label>
                     <input type="text" name="halfCircleRadius" id="half-circle-radius" class="size" >
-                    <button type="button" id="up-down">Up/Down</button>
+                    <button class="tool-btn"  type="button" id="up-down">Up/Down</button>
                     
                    
                 </div>
                 
             </div>
             <div class="specialEffects">
-                <button class="effect">SOURCE-OVER</button>
-                <button class="effect">SOURCE-IN</button>
-                <button class="effect">SOURCE-OUT</button>
-                <button class="effect">SOURCE-ATOP</button>
-                <button class="effect">DESTINATION-OVER</button>
-                <button class="effect">DESTINATION-IN</button>
-                <button class="effect">DESTINATION-OUT</button>
-                <button class="effect">DESTINATION-ATOP</button>
-                <button class="effect">LIGHTER</button>
-                <button class="effect">COPY</button>
-                <button class="effect">XOR</button>
-                <button class="effect">MULTIPLY</button>
-                <button class="effect">SCREEN</button>
-                <button class="effect">OVERLAY</button>
-                <button class="effect">DARKEN</button>
-                <button class="effect">LIGHTEN</button>
-                <button class="effect">COLOR-DODGE</button>
-                <button class="effect">COLOR-BURN</button>
-                <button class="effect">HARD-LIGHT</button>
-                <button class="effect">SOFT-LIGHT</button>
-                <button class="effect">DIFFERENCE</button>
-                <button class="effect">EXCLUSION</button>
-                <button class="effect">HUE</button>
-                <button class="effect">SATURATION</button>
-                <button class="effect">COLOR</button>
-                <button class="effect">LUMINOSITY</button>
+                <button class="tool-btn effect">SOURCE-OVER</button>
+                <button class="tool-btn effect">SOURCE-IN</button>
+                <button class="tool-btn effect">SOURCE-OUT</button>
+                <button class="tool-btn effect">SOURCE-ATOP</button>
+                <button class="tool-btn effect">DESTINATION-OVER</button>
+                <button class="tool-btn effect">DESTINATION-IN</button>
+                <button class="tool-btn effect">DESTINATION-OUT</button>
+                <button class="tool-btn effect">DESTINATION-ATOP</button>
+                <button class="tool-btn effect">LIGHTER</button>
+                <button class="tool-btn effect">COPY</button>
+                <button class="tool-btn effect">XOR</button>
+                <button class="tool-btn effect">MULTIPLY</button>
+                <button class="tool-btn effect">SCREEN</button>
+                <button class="tool-btn effect">OVERLAY</button>
+                <button class="tool-btn effect">DARKEN</button>
+                <button class="tool-btn effect">LIGHTEN</button>
+                <button class="tool-btn effect">COLOR-DODGE</button>
+                <button class="tool-btn effect">COLOR-BURN</button>
+                <button class="tool-btn effect">HARD-LIGHT</button>
+                <button class="tool-btn effect">SOFT-LIGHT</button>
+                <button class="tool-btn effect">DIFFERENCE</button>
+                <button class="tool-btn effect">EXCLUSION</button>
+                <button class="tool-btn effect">HUE</button>
+                <button class="tool-btn effect">SATURATION</button>
+                <button class="tool-btn effect">COLOR</button>
+                <button class="tool-btn effect">LUMINOSITY</button>
             </div>
     
         </div>
