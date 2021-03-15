@@ -50,8 +50,7 @@ canvas.addEventListener("mouseup", () => isDrawing=false);
 let canvasWidth = document.getElementById("canvas-width");
 let canvasHeight = document.getElementById("canvas-height");
 let confirmSize = document.getElementById("confirm-size");
-console.log(canvasWidth);
-console.log(canvasWidth.value)
+
 function changeCanvasWidth () {
     canvasWidth.value = document.getElementById("canvas-width").value;
 }
@@ -186,7 +185,7 @@ function drawCircle () {
     // ctx.moveTo(lastX, lastY);
     // ctx.lineTo(lastX, lastY);
     ctx.arc(lastX, lastY, circleRadius.value, 0, Math.PI *2);
-     
+    //  ctx.fill();
     ctx.stroke();
 }
 
@@ -219,6 +218,24 @@ const predefinedShapesClass = document.querySelector(".predefinedShapes");
 const specialEffectsClass = document.querySelector(".specialEffects");
 sizeAndStyleBtn.addEventListener("click", ()=> sizeAndStyleClass.style.display ==="" ? sizeAndStyleClass.style.display ="block" : sizeAndStyleClass.style.display = "");
 predefinedShapesBtn.addEventListener("click", ()=> predefinedShapesClass.style.display ==="" ? predefinedShapesClass.style.display ="block" : predefinedShapesClass.style.display = "");
+specialEffectsBtn.addEventListener("click", ()=> specialEffectsClass.style.display ==="" ? specialEffectsClass.style.display ="block" : specialEffectsClass.style.display = "");
+
+//effects
+
+const effects = document.getElementsByClassName("effect");
+function addEffect (e) {
+    ctx.globalCompositeOperation=e.target.innerHTML.toLowerCase();
+    console.log(ctx.globalCompositeOperation)
+}
+for (let i =0; i<effects.length; i++) {
+    effects[i].addEventListener("click", addEffect);
+}
+
+// for (let effect in effects) {
+//     console.log(effects[effect]);
+//     // effects[effect].addEventListener("click", addEffect);
+// }
+
 
 
 // ctx.rect(100, 100, 200, 200);
