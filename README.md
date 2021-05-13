@@ -32,7 +32,7 @@ To get  a local copy:
  2. Save the file and extract it in any folder you wish
  3. Find the "index.html" file in extracted file and double click on it
   
-To run it online just click on [Live Demo Link](https://shinobiwarior.github.io/Cake-Factory/)
+To run it online just click on [Live Demo Link](https://shinobiwarior.github.io/Canvas-project/)
 
 ## Author
 
@@ -47,7 +47,7 @@ To run it online just click on [Live Demo Link](https://shinobiwarior.github.io/
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ShinobiWarior/Calculator/issues).
+Feel free to check the [issues page](https://github.com/ShinobiWarior/Canvas-project/issues).
 
 ## Show your support
 
