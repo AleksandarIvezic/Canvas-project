@@ -1,7 +1,7 @@
 # Canvas-project
  
 > Canvas project from Wes Bos 30 days coding challenge -
-The goal of this project is to make app for drawing using canvas Tag in HTML file folowing tutorial on YouTube by Wes Bos. The tutorial was completed on main branch so now I developed upgreded version on My-feature Branch. Still need some improovements before merging.
+The goal of this project is to make app for drawing using canvas Tag in HTML file folowing tutorial on YouTube by Wes Bos. The tutorial was completed on main branch so now I developed upgreded version on My-feature Branch. Still need some improovements.
 
 ![screenshot](./Screenshot-Canvas.png)
 
