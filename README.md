@@ -40,7 +40,7 @@ To run it online just click on [Live Demo Link](https://shinobiwarior.github.io/
 
 - GitHub: [Aleksandar Ivezic](https://github.com/ShinobiWarior)
 - Twitter: [@Aivezic](https://twitter.com/Aivezic)
-- LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezi%C4%87-1a6b0391/)
+- LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezic/)
 
 
 ## 🤝 Contributing
