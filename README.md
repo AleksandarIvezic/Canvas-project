@@ -1,7 +1,7 @@
 # Canvas-project
  
 > Canvas project from Wes Bos 30 days coding challenge -
-The goal of this project is to make app for drawing using canvas Tag in HTML file folowing tutorial on YouTube by Wes Bos. The tutorial was completed on main branch so now I developed upgreded version on My-feature Branch. Still need some improovements before merging.
+The goal of this project is to make an app for drawing using canvas Tag in HTML file following a tutorial on YouTube by Wes Bos. The tutorial was completed on the main branch so now I developed an upgraded version on My-feature Branch. Still need some improvements before merging.
 
 ![screenshot](./Screenshot-Canvas.png)
 
@@ -24,7 +24,7 @@ To get  a local copy:
 - Cloning repository:
  1. Press the green button `"Code"` and copy the link bellow
  2. Then open terminal or Git Bash in a folder where you want to copy the repository
- 3. Type command `"git clone"` and paste the address that you copied
+ 3. Type the command `"git clone"` and paste the address that you copied
  4. Press "Enter"
  5. Find the `"index.html"` file and double click on it
 - Download zip file:
