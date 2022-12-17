@@ -13,7 +13,7 @@ The goal of this project is to make an app for drawing using canvas Tag in HTML 
 
 ## Live Demo
 
-[Live Demo Link](https://shinobiwarior.github.io/Canvas-project/)
+[Live Demo Link](https://AleksandarIvezic.github.io/Canvas-project/)
 
 ## Getting Started
 
